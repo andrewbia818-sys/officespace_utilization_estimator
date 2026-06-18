@@ -22,3 +22,4 @@ class ClientData:
         self.peak_login_percentage = peak_login_percentage
         self.meeting_hours = meeting_hours
         self.hybrid_days = hybrid_days
+        

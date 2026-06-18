@@ -1,14 +1,16 @@
 class ProxyData:
     def __init__(
         self,
-        avg_daily_presence: float,
-        adjusted_vpn_factor: float,
-        meeting_density_score: float,
-        travel_absence_factor: float,
-        hybrid_presence_ratio: float
+        baseline_working: float,
+        in_office_max: float,
+        in_office_min: float,
+        meeting_density: float,
+        peak_login_percentage: float,
+        vpn_usage_percentage: float
     ):
-        self.avg_daily_presence = avg_daily_presence
-        self.adjusted_vpn_factor = adjusted_vpn_factor
-        self.meeting_density_score = meeting_density_score
-        self.travel_absence_factor = travel_absence_factor
-        self.hybrid_presence_ratio = hybrid_presence_ratio
+        self.baseline_working = baseline_working
+        self.in_office_max = in_office_max
+        self.in_office_min = in_office_min
+        self.meeting_density = meeting_density
+        self.peak_login_percentage = peak_login_percentage
+        self.vpn_usage_percentage = vpn_usage_percentage

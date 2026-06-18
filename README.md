@@ -111,11 +111,13 @@ A further complication in this sort of analysis is that the required proxy will 
 
 | Proxy Feature | Formula | Meaning |
 | --- | --- | --- |
-| ``avg_daily_presence`` | ``(100 ``- ``travel_percentage ``- ``vpn_usage_percentage) ``/ ``100`` | Estimated percent of employees physically present on a typical day |
-| ``adjusted_vpn_factor`` | ``vpn_usage_percentage ``/ ``100`` | Normalized remote‑work intensity |
-| ``meeting_density_score`` | ``meeting_hours ``/ ``8`` (capped at 1.0) | Meeting load relative to an 8‑hour day |
-| ``travel_absence_factor`` | ``travel_percentage ``/ ``100`` | Normalized travel‑related absence |
-| ``hybrid_presence_ratio`` | ``hybrid_days ``/ ``5`` | Hybrid schedule intensity |
+| ``baseline_working`` | ``(100 x (1 - (Vacation + Sick) / 260)``|`` employees working, percent ``|
+|``in_office_max ``| ``baseline_working – travel percent`` | ``maximum employees physically present on a typical day, percent``|
+| ``in_office_min`` | ``baseline_working – (travel percent + 100 x (REM/5))`` |`` minimum employees physically present on a typical day, percent``|
+| ``meeting_density`` | ``100 x meeting_hours/8  (capped at 1.0)`` | ``meeting load relative to an 8 hour day, percent ``|
+| ``login_factor`` | ``peak login/100 ``/ ``sanity check on in-office estimates, percent`` |
+| ``vpn_factor`` | ``vpn/100`` | ``sanity check on active remote and travel employee, percent``|
+
 
 ---
 
