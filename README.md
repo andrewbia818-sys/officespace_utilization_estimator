@@ -174,7 +174,7 @@ workspace-utilization-estimator/
 ├── models.py
 ├── validator.py
 ├── normalizer.py
-├── utilization_estimatort.py
+├── utilization_estimator.py
 ├── parser.py
 ├── config.py
 ├── data/
