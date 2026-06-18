@@ -6,6 +6,7 @@ from functions.validator import validate_data
 from functions.create_org import create_organization
 from functions.proxy_calculator import calculate_proxy_features
 from pprint import pprint
+from functions.analysis_engine import analyze_proxy_features
 
 # Step 1 - import json file, call parser function, and 
 # print the result
@@ -25,6 +26,7 @@ pprint(vars(organization.proxy_data))
 
 #Step 4 - analyze the proxy features to estimate 
 # utilization and occupancy with confidence levels
+analyze_proxy_features(organization)
 
 # Step 5 - output the results in a user-friendly format
 
