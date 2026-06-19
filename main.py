@@ -12,15 +12,12 @@ from functions.analysis_engine import analyze_proxy_features
 from functions.output_generator import generate_output
 
 # Step 1 - import json file, call parser function, and 
-# print the result
 data = parse_json_file("data/sample_client.json")
-#print(f"Client data: {data}")
 
 # Step 2 - validate the data and create an Organization object
 validate_data(data)
 organization = create_organization(data)
 pprint(vars(organization.client_data))
-#pprint(vars(organization.proxy_data))
 
 # Step 3 - calculate proxy features and add them to the 
 # Organization object
@@ -30,7 +27,6 @@ pprint(vars(organization.proxy_data))
 #Step 4 - analyze the proxy features to estimate 
 # utilization and occupancy with confidence levels
 analyze_proxy_features(organization)
-#pprint(vars(organization.util_data))
 
 # Step 5 - output the results in a user-friendly format
 output = generate_output(

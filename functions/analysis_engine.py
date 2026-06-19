@@ -17,7 +17,6 @@ def analyze_proxy_features(organization):
 
      # Calculate estimated effective maximum sqft per employee = sqft_per_employee / min_in-office percentage  
     estimated_max_sqft_per_employee = round(sqft_per_employee / (organization.proxy_data.in_office_min/100), 2)
-    #print(f"Estimated effective maximum sqft per employee: {estimated_max_sqft_per_employee}")
     organization.util_data.estimated_max_sqft_per_employee = estimated_max_sqft_per_employee
 
     # Assess confidence levels based on the proxy features.
@@ -31,7 +30,6 @@ def analyze_proxy_features(organization):
         confidence_measure_1 = "Medium"
     else: 
         confidence_measure_1 = "Low"
-    #print(f"Confidence measure 1: {confidence_masure_1}")
     organization.util_data.confidence_measure_1 = confidence_measure_1
     # Confidence level 2 - if meeting_density is above 0.3 and confidence level 1 is high
     # then we have a high confidence that real estate reduction is achievable.
@@ -40,16 +38,7 @@ def analyze_proxy_features(organization):
     elif organization.proxy_data.meeting_density > 30 and confidence_measure_1 == "Medium":
         confidence_measure_2 = "Medium"
     else:
-        confidence_measure_2 = "Low"
-    #print(f"Confidence measure 2: {confidence_measure_2}")   
+        confidence_measure_2 = "Low" 
     organization.util_data.confidence_measure_2 = confidence_measure_2
-    # print confidence stantment.
-    #print(f"Based on the analysis, {organization.client_data.organization_name} allocates {sqft_per_employee:.2f} sqft per employee.\n")
-    #print(f"However, because of systemic absences the effective sqft per employee is between\n")
-    #print(f"{estimated_min_sqft_per_employee:.2f} and {estimated_max_sqft_per_employee:.2f} sqft. If these figures are above 100 sqft per employee,\n")
-    #print(f" we can estimate that real estate reduction by a similar factor is achievable using unassigned workspace.\n")
-    #print(f"Factoring systemic absences there is a {confidence_measure_1} confidence that real estate reduction is \n")
-    #print(f"achievable, and based on the meeting density there is a {confidence_measure_2} confidence that real \n")
-    #print(f"estate reduction is achievable.")
 
     pass
