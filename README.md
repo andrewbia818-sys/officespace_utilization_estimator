@@ -78,18 +78,16 @@ A further complication in this sort of analysis is that the required proxy will 
 
 ```json
 {
-  "utilization": {
-    "low": 0.45,
-    "most_likely": 0.58,
-    "high": 0.72
-  },
-  "confidence": 0.69,
-  "patterns": [
-    "Midweek occupancy peaks",
-    "Monday and Friday underutilization",
-    "Meeting-heavy culture reduces desk utilization"
-  ],
-  "executive_interpretation": "The organization appears materially over-provisioned relative to probable occupancy patterns."
+  "organization_name": "Dewey Cheatem & Howe LLP",
+  "sqft_per_employee": 125.0,
+  "estimated_min_sqft_per_employee": 154.76,
+  "estimated_max_sqft_per_employee": 306.6,
+  "confidence_measure_1": "Medium",
+  "confidence_measure_2": "Medium"
+}
+  "executive_interpretation": "Based on the analysis, Dewey Cheatem & Howe LLP allocates 125.00 sqft per employee.
+
+However, because of systemic absences the effective sqft per employee is ...."
 }
 ```
 ## Units
