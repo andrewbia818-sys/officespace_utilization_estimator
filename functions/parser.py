@@ -1,5 +1,6 @@
 #a function that parses a json file and returns a dictionary
 import json
+
 def parse_json_file(file_path):
     try:
         with open(file_path, 'r') as file:

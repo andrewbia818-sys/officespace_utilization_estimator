@@ -1,7 +1,8 @@
 
 from models.organization import Organization
 from models.client_data import ClientData
-from models.proxy_data import ProxyData 
+from models.proxy_data import ProxyData
+from models.util_data import UtilData
 
 #A function that takes the parsed JSON data after it has been
 #validated and creates and Organization object with the client 
@@ -30,6 +31,14 @@ def create_organization(data):
         peak_login_percentage=0,
         vpn_usage_percentage=0
     )
+    # and dummy UtilData object with default values
+    util_data = UtilData(
+        sqft_per_employee=0,
+        estimated_min_sqft_per_employee=0,
+        estimated_max_sqft_per_employee=0,
+        confidence_measure_1=0,
+        confidence_measure_2=0
+    )
 
-    organization = Organization(client_data, proxy_data)
+    organization = Organization(client_data, proxy_data, util_data)
     return organization
